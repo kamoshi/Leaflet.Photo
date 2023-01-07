@@ -14,11 +14,8 @@ L.Photo = L.FeatureGroup.extend({
   },
 
   addLayers: function (photos: Photo[]) {
-    if (photos) {
-      for (var i = 0, len = photos.length; i < len; i++) {
-        this.addLayer(photos[i]);
-      }
-    }
+    for (const photo of photos)
+      this.addLayer(photo);
     return this;
   },
 
@@ -46,22 +43,21 @@ L.photo = function (photos, options) {
 
 
 if (L.MarkerClusterGroup) {
-
   L.Photo.Cluster = L.MarkerClusterGroup.extend({
     options: {
       featureGroup: L.photo,
       maxClusterRadius: 100,
       showCoverageOnHover: false,
+      icon: { iconSize: [40, 40] as L.PointTuple },
+
       iconCreateFunction: function(cluster: any) {
-        const icon = L.extend({
-          html: `<div style="background-image: url(${cluster.getAllChildMarkers()[0].photo.thumbnail});"></div><b>${cluster.getChildCount()}</b>`,
+        const markers = cluster.getAllChildMarkers();
+        return new L.DivIcon(L.extend({
+          html: `<div style="background-image: url(${markers[0].photo.thumbnail});"></div><b>${markers.length}</b>`,
           className: 'leaflet-marker-photo',
-        }, this.icon);
-        return new L.DivIcon(icon);
-        },
-      icon: {
-        iconSize: [40, 40] as L.PointTuple
-      }},
+        }, this.icon));
+      },
+    },
 
     initialize: function (options: any) {
       options = L.Util.setOptions(this, options);
