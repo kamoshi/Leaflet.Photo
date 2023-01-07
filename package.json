@@ -1,0 +1,30 @@
+{
+  "name": "leaflet.photo",
+  "description": "Leaflet.Photo =============",
+  "version": "0.0.1",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamoshi/Leaflet.Photo.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kamoshi/Leaflet.Photo/issues"
+  },
+  "homepage": "https://github.com/kamoshi/Leaflet.Photo#readme",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@types/leaflet": "^1.9.0",
+    "@types/leaflet.markercluster": "^1.5.1"
+  }
+}
