@@ -27,12 +27,12 @@ L.Photo = L.FeatureGroup.extend({
   },
 
   createMarker: function (photo: Photo) {
-    const marker = L.marker(photo.coords, {
+    const marker = L.marker(photo, {
       icon: L.divIcon(L.extend({
-        html: `<div style="background-image: url(${photo.details.thumbnail});"></div>`,
+        html: `<div style="background-image: url(${photo.thumbnail});"></div>`,
         className: 'leaflet-marker-photo'
       }, photo, this.options.icon)),
-      title: photo.details.caption || ''
+      title: photo.caption || ''
     });
     // @ts-ignore
     marker.photo = photo;
