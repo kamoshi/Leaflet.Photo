@@ -1,10 +1,13 @@
-import * as L from 'leaflet';
 
 
-declare module 'leaflet' {
-    class Photo extends L.FeatureGroup {
-        Cluster: MarkerClusterGroup;
-    }
+interface PhotoDetails {
+  thumbnail: string;
+  photoUrl: string;
+  caption: string;
+  date: string;
+}
 
-    function photo(photos, options): Photo;
+interface Photo {
+  coords: L.LatLngExpression;
+  details: PhotoDetails;
 }
