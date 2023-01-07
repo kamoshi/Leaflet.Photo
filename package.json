@@ -1,6 +1,6 @@
 {
-  "name": "leaflet.photo",
-  "description": "Leaflet.Photo =============",
+  "name": "leaflet-photo",
+  "description": "Leaflet.Photo in TypeScript",
   "version": "0.0.1",
   "directories": {
     "example": "examples"
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kamoshi/Leaflet.Photo.git"
+    "url": "git+https://github.com/kamoshi/leaflet-photo.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kamoshi/Leaflet.Photo/issues"
+    "url": "https://github.com/kamoshi/leaflet-photo/issues"
   },
-  "homepage": "https://github.com/kamoshi/Leaflet.Photo#readme",
+  "homepage": "https://github.com/kamoshi/leaflet-photo#readme",
   "devDependencies": {
     "typescript": "^4.9.4"
   },
